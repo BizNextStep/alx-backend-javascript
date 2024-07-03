@@ -1,3 +1,5 @@
+// Ensure you have the Teacher interface defined as shown previously
+
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -7,22 +9,27 @@ interface Teacher {
   [propName: string]: any; // This allows adding any additional properties
 }
 
-const teacher3: Teacher = {
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+// Example usage
+const director1: Directors = {
   firstName: 'John',
-  fullTimeEmployee: false,
   lastName: 'Doe',
   location: 'London',
-  contract: false,
+  fullTimeEmployee: true,
+  numberOfReports: 17,
 };
 
-console.log(teacher3);
+console.log(director1);
 
 // Output should be:
 // {
 //   firstName: "John",
-//   fullTimeEmployee: false,
 //   lastName: "Doe",
 //   location: "London",
-//   contract: false
+//   fullTimeEmployee: true,
+//   numberOfReports: 17
 // }
 
